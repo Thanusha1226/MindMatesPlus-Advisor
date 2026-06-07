@@ -378,15 +378,22 @@ export default function CriticalCases() {
                 className="pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-300 rounded-xl outline-none text-sm transition-all w-52"
               />
             </div>
-            <select
-              value={connStatusFilter}
-              onChange={(e) => setConnStatusFilter(e.target.value as typeof connStatusFilter)}
-              className="px-3 py-2 bg-slate-100 text-slate-600 rounded-xl text-sm font-semibold outline-none border-none hover:bg-slate-200 transition-colors"
-            >
-              <option value="All">All Statuses</option>
-              <option value="pending">Pending</option>
-              <option value="accepted">Accepted</option>
-            </select>
+            <div className="inline-flex rounded-full border border-slate-200 overflow-hidden bg-slate-100">
+              {(['All', 'pending', 'accepted'] as const).map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => setConnStatusFilter(option)}
+                  className={`px-4 py-2 text-sm font-semibold transition-colors ${
+                    connStatusFilter === option
+                      ? 'bg-white text-brand-600 shadow-sm'
+                      : 'text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  {option === 'All' ? 'All' : option.charAt(0).toUpperCase() + option.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
