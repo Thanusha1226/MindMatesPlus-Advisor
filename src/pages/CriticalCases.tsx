@@ -285,7 +285,7 @@ export default function CriticalCases() {
     .filter((c) => statusFilter === 'All' || c.status === statusFilter)
     .sort((a, b) => RISK_ORDER[a.riskLevel] - RISK_ORDER[b.riskLevel]);
 
-  // Scroll to and briefly highlight the connection when navigating from an alert
+  // Scroll to and briefly highLight the connection when navigating from an alert
   useEffect(() => {
     if (!highlightedConnectionId || connectionsLoading) return;
     const el = cardRefs.current.get(highlightedConnectionId);
