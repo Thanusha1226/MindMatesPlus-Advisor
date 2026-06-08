@@ -544,7 +544,7 @@ export default function CriticalCases() {
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-xl font-bold text-slate-800 mb-2">Protocol Reminder</h3>
           <p className="text-slate-600 leading-relaxed">
-            For all <span className="font-bold text-red-600">Critical</span> risk cases, advisors must initiate
+            For all <span className="font-bold text-red-600">Critical</span> Risk cases, advisors must initiate
             contact within 15 minutes of detection. Ensure all intervention steps are documented in the Advisor
             Notes section.
           </p>
